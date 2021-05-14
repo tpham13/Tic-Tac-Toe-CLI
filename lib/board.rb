@@ -54,6 +54,13 @@ class Board
         # binding.pry
     end
 
-    
+    def taken?(input)
+        #check if the position of each cell is an empty string ""
+        # binding.pry
+        position(input)=="X" || position(input)=="O"
+        #the code below also work: it check for if there's a space of empty string
+        # !(position(input)==" " || position(input)=="")
+    end 
+
 
 end  

@@ -71,6 +71,9 @@ class Board
     end 
 
     def update(input, player)
+        #update method is going to put the player token(x or o) in the position that it need to be in
+        cells[input.to_i-1] = player.token #stands for either X or O 
+
     end 
 
 end  

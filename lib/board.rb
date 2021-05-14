@@ -62,5 +62,15 @@ class Board
         # !(position(input)==" " || position(input)=="")
     end 
 
+    def valid_move?(input)
+        #make sure user's input turn from string to integer & 
+        #check if user input is between 1-9
+        #check if cell is not taken 
+        # binding.pry
+        input.to_i.between?(1,9) && !taken?(input)
+    end 
+
+    def update(input, player)
+    end 
 
 end  

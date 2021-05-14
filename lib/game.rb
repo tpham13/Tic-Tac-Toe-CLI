@@ -23,4 +23,23 @@ class Game
         #turn_count method is from class Board
         @board.turn_count % 2 == 0 ? player_1 : player_2
     end 
+
+    def over?
+        #has someone won? or draw?
+        #if won is true, it evaluate to true, if draw is true, it will evaluate to true
+        won? || draw? 
+    end 
+
+    def won? 
+        #want to check if in each cell has the same character
+        WIN_COMBINATIONS.detect do |winner|
+            @board.cells[winner[0]] == @board.cells[winner[1]] && 
+            @board.cells[winner[1]] == @board.cells[winner[2]]
+            #we want to see if the 2nd cell is equal to the 3 cell 
+        end 
+    end  
+
+    def draw? 
+        @board.full? && !won? 
+    end 
 end 

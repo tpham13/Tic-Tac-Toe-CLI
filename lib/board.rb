@@ -1,4 +1,5 @@
 class Board
+    require 'pry'
     # def cells
     #     @cells 
     # end 
@@ -30,5 +31,29 @@ class Board
         cells[input.to_i-1]
     end
 
+    #a question mark indicate that this method is either return true/false
+    def full?
+        #check to see if each cell is full 
+        #if full return true, not full return be_false
+        #we're going to loop through each cell on the board using method all and check if there's an X or an O
+        cells.all?{|character| character == "X" || character == "O"}
+        #this code is the same as above: 
+        # cells.all? do |character| 
+        #     # binding.pry
+        #     if character == "X" || character == "O"
+        #         true
+        #     else
+        #         false 
+        #     end 
+        # end 
+    end 
+
+    def turn_count
+        #here we check each cell and see which one has "X" which one has "O"
+        cells.count{|char| char == "X" || char == "O"}
+        # binding.pry
+    end
+
+    
 
 end  
